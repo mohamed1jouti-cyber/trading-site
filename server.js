@@ -103,7 +103,7 @@ app.post("/api/admin/ban", authMiddleware, async (req, res) => {
 });
 
 // Export transactions as CSV
-import stringify from "csv-stringify";
+import { stringify } from "csv-stringify";
 app.get("/api/transactions/export", authMiddleware, async (req, res) => {
   let query = {};
   if (req.user.role !== "admin") {
